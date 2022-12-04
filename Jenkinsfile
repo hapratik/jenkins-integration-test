@@ -8,7 +8,7 @@ pipeline {
         
         stage('compile'){
         def mvnHome = tool name: 'maven', type: 'maven'}
-        sh "$({mvnHome}/binmvn package"
+        sh "$({mvnHome}/bin/mvn package"
         }//stage
     
         stage('sonar_scan') {
