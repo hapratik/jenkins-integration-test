@@ -1,6 +1,7 @@
 import requests
 import uuid
 import os
+#import os
 from flask import Flask, request
 from open_nsfw_python3 import NSFWClassifier
 __name__ = 'sexual_content_classification_api'
