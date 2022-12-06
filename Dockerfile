@@ -1,5 +1,5 @@
 FROM python:3.7.4
-#WORKDIR /app
+WORKDIR /app
 COPY ./ ./
 RUN pip install open-nsfw-python3==0.0.5
 RUN pip install uuid==1.30
