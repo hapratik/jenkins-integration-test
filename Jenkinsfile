@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    
+    //test
     stages{
         stage('SCM'){
             git 'https://github.com/hapratik/jenkins-integration-test'
