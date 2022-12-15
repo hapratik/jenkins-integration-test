@@ -4,7 +4,7 @@ branch_names=$(git branch -r | cut -c 10- | tail -n +2)
 #arr=$(git branch -r | cut -c 10- | tail -n +2)
 for branch in $branch_names
 do
-echo $branch
+#echo $branch
 if [ "$branch" = "production" ]; then 
     #count=$(git tag -l |wc -l)
     #tag_arr=$(git tag -l)
