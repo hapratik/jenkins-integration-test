@@ -23,13 +23,7 @@ jobs:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
     steps:
-    - name: Slack Notification
-      uses: act10ns/slack@v1
-      with: 
-        status: starting
-        channel: '#slack-webhook'
-        message: Starting Build and Deploy...
-      if: always()
+
          
     - name: Slack Notification
       uses: act10ns/slack@v1
