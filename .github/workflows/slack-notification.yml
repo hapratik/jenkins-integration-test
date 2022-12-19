@@ -13,7 +13,7 @@ jobs:
           SLACK_MESSAGE: 'Demo''ing the Slack Notification'
           SLACK_TITLE: 'Slack Notification Demo'
         with:
-          channel: app-alerts
+          channel: slack-webhook
           status: STARTED
           color: good
 
