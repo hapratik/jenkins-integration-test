@@ -1,61 +1,8 @@
-# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
-
-name: Nestech - Build and Deploy
-
-on:
-  #push:
-    #branches: [ master ]
-  #pull_request:
-    #branches: [ master ]
-  workflow_dispatch:
-    
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    #environment: Production
-    env:
-      #NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
-      #NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
-      #PLATFORM_USERNAME: ${{ secrets.PLATFORM_USERNAME }}
-      #PLATFORM_PASSWORD: ${{ secrets.PLATFORM_PASSWORD }}
-      #SANDBOX_CLIENT_ID: ${{ secrets.SANDBOX_CLIENT_ID }}
-      #SANDBOX_CLIENT_SECRET: ${{ secrets.SANDBOX_CLIENT_SECRET }} 
-      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-
-    steps:
-
-         
-    - name: Slack Notification
-      uses: act10ns/slack@v1
-      with: 
-        status: ${{ job.status }}
-        channel: '#slack-webhook'
-        message: Build {{ env.GITHUB_REF_NAME }} branch Successfully
-      if: always()
-      
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    env:
-      #NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
-      #NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
-      #PLATFORM_USERNAME: ${{ secrets.PLATFORM_USERNAME }}
-      #PLATFORM_PASSWORD: ${{ secrets.PLATFORM_PASSWORD }}
-      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-
-    steps:
-    - name: Slack Notification
-      uses: act10ns/slack@v1
-      with: 
-        status: starting
-        channel: '#slack-webhook'
-        message: Starting Deployment...
-      if: always()
-    
-    - name: Slack Notification
-      uses: act10ns/slack@v1
-      with: 
-        status: ${{ job.status }}
-        channel: '#slack-webhook'
-        message: Deployed {{ env.GITHUB_REF_NAME }} branch Successfully
-      if: always() 
+   - name: Report Status
+  if: always()
+  uses: pratik/notify-slack-action@v1
+  with:
+    status: ${{ job.status }}
+    notify_when: 'failure'
+  env:
+    SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
