@@ -6,9 +6,15 @@ jobs:
       runs-on: ubuntu-latest
       steps:
       - uses: actions/checkout@master
+        
       - name: Slack Notification Demo
+        with:   
+          status: ${{ job.status }}
+          channel: '#slack-webhook'
+          notify_when: 'failure'
         uses: bryannice/gitactions-slack-notification@2.0.0
         env:
           SLACK_INCOMING_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_MESSAGE: 'Demo''ing the Slack Notification'
           SLACK_TITLE: 'Slack Notification Demo'
+       
