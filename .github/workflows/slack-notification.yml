@@ -12,4 +12,5 @@ jobs:
           SLACK_INCOMING_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_MESSAGE: 'Demo''ing the Slack Notification'
           SLACK_TITLE: 'Slack Notification Demo'
-          SLACK_CHANNEL: slack-webhook
+          
+          
