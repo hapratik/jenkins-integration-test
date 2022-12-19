@@ -3,9 +3,7 @@ name: Slack Notification Demo
 jobs:
     slackNotification:
       name: Slack Notification Demo
-       with: 
-         status: ${{ job.status }}
-         channel: '#slack-webhook'
+      runs-on: ubuntu-latest
       steps:
       - uses: actions/checkout@master
       - name: Slack Notification Demo
@@ -14,3 +12,4 @@ jobs:
           SLACK_INCOMING_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_MESSAGE: 'Demo''ing the Slack Notification'
           SLACK_TITLE: 'Slack Notification Demo'
+          SLACK_CHANNEL: slack-webhook
