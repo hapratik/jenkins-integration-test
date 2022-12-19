@@ -7,7 +7,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Slack Notification
+      if: success()
       uses: rtCamp/action-slack-notify@v2
+      with:
+        status: SUCCESS
+        color: good
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_URL }}
         SLACK_BOT_TOKEN: ${{ secrets.SLACK_NOTIFICATIONS_BOT_TOKEN }}
