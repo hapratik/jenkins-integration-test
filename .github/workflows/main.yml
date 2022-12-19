@@ -1,4 +1,4 @@
-- name: Report Status
+  name: Report Status
   if: always()
  # uses: ravsamhq/notify-slack-action@v1
   uses: act10ns/slack@v1
