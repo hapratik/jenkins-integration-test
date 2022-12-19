@@ -1,0 +1,17 @@
+- name: Run tests
+  # ... your test step here- name: Notify slack success
+  if: success()
+  env:
+    SLACK_WEBHOOK: ${{secrets.SLACK_URL}}
+  uses: rtCamp/action-slack-notify@v2
+  with:
+    status: SUCCESS
+    color: good
+- name: Notify slack fail
+  if: failure()
+  env:
+    SLACK_WEBHOOK: ${{ secrets.SLACK_URL }}
+  uses: rtCamp/action-slack-notify@v2
+  with:
+    status: FAILED
+    color: danger
