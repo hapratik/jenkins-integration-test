@@ -5,7 +5,7 @@ jobs:
     name: Slack Notification
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: rtCamp/action-slack-notify@v2
     - name: Notify slack success
       if: success()
       uses: rtCamp/action-slack-notify@v2
@@ -15,6 +15,7 @@ jobs:
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_URL }}
         SLACK_BOT_TOKEN: ${{ secrets.SLACK_NOTIFICATIONS_BOT_TOKEN }}
+        
     - name: Notify slack fail
       if: failure()
       with:
