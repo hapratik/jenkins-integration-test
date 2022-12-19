@@ -12,12 +12,14 @@ jobs:
       with:
         status: SUCCESS
         color: good
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_URL }}
+        SLACK_BOT_TOKEN: ${{ secrets.SLACK_NOTIFICATIONS_BOT_TOKEN }}
     - name: Notify slack fail
       if: failure()
       with:
         status: FAILED
         color: danger
-
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_URL }}
         SLACK_BOT_TOKEN: ${{ secrets.SLACK_NOTIFICATIONS_BOT_TOKEN }}
