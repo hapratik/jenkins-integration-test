@@ -10,9 +10,9 @@ jobs:
     - name: Slack Notification
       if: success()
       uses: rtCamp/action-slack-notify@v2
-      with:
-        status: SUCCESS
-        color: good
+     # with:
+     #   status: SUCCESS
+     #   color: good
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_URL }}
         #SLACK_WEBHOOK: ${{ secrets.INCOMING_WEBHOOK }}
