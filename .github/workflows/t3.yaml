@@ -13,5 +13,5 @@ jobs:
         with:
           status: ${{ job.status }} 
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.INCOMING_WEBHOOK }}
-
+           SLACK_WEBHOOK: ${{ secrets.INCOMING_WEBHOOK }}
+           SLACK_ICON_EMOJI: ${{:bell:}}
