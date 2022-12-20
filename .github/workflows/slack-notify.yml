@@ -14,5 +14,6 @@ jobs:
         status: SUCCESS
         color: good
       env:
-        SLACK_WEBHOOK: ${{ secrets.SLACK_URL }}
+       # SLACK_WEBHOOK: ${{ secrets.SLACK_URL }}
+        SLACK_WEBHOOK: ${{ secrets.INCOMING_WEBHOOK }}
         SLACK_BOT_TOKEN: ${{ secrets.SLACK_NOTIFICATIONS_BOT_TOKEN }}
