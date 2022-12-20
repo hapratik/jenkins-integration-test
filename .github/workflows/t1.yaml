@@ -1,4 +1,8 @@
-steps:
+on: push
+name: Slack Notification Demo123
+jobs:
+   slackNotification:
+     runs-on: ubuntu-lateststeps:
   - uses: 8398a7/action-slack@v3
   with:
     status: custom
