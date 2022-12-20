@@ -6,11 +6,9 @@ jobs:
     name: Slack Notification
     runs-on: ubuntu-latest
     steps:
-    - name: git_checkout
     - uses: actions/checkout@v2
     
     - name: Slack Notification34
-      if: success()
       uses: rtCamp/action-slack-notify@v2
  
       env:
