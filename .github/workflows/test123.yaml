@@ -1,6 +1,6 @@
 
 
-      # Name of workflow to be displyed on Github Console
+      # Name of workflow to be displyed on Git Console
 name: Build and Test slack integration
 
 # Triggers the workflow on separate events s
