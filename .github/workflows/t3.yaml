@@ -4,7 +4,14 @@ jobs:
   first-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Print greeting
+      - name: Print success
         run: echo "success"
-      - name: Print goodbye
+      - name: Print failure
         run: echo "failure"
+      - name: slack-notify
+      - uses: rtCamp/action-slack-notify@v2
+        with:
+          status: ${{ job.status }} 
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.INCOMING_WEBHOOK }}
+
