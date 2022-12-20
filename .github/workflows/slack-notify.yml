@@ -1,6 +1,6 @@
 on: push
 #1234
-name: Slack Notification Demo123
+name: Slack Notification Demo
 jobs:
   slackNotification:
     name: Slack Notification
@@ -12,6 +12,6 @@ jobs:
       uses: rtCamp/action-slack-notify@v2
  
       env:
-        #SLACK_WEBHOOK: ${{ secrets.SLACK_URL }}
-        SLACK_WEBHOOK: ${{ secrets.INCOMING_WEBHOOK }}
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEB }}
+        #SLACK_WEBHOOK: ${{ secrets.INCOMING_WEBHOOK }}
         #SLACK_BOT_TOKEN: ${{ secrets.SLACK_NOTIFICATIONS_BOT_TOKEN }}
