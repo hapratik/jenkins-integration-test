@@ -3,7 +3,7 @@
       # Name of workflow to be displyed on Github Console
 name: Build and Test slack integration
 
-# Triggers the workflow on separate events 
+# Triggers the workflow on separate events s
 on:
   push:
     # Trigger the worflow on push event for all branches
