@@ -9,7 +9,7 @@ jobs:
     - name: git_checkout
     - uses: actions/checkout@v2
     
-    - name: Slack Notification
+    - name: Slack Notification34
       if: success()
       uses: rtCamp/action-slack-notify@v2
  
