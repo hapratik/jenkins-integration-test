@@ -12,6 +12,9 @@ jobs:
       uses: rtCamp/action-slack-notify@v2
  
       env:
-        SLACK_WEBHOOK: ${{ secrets.SLACK_WEB }}
         #SLACK_WEBHOOK: ${{ secrets.INCOMING_WEBHOOK }}
         #SLACK_BOT_TOKEN: ${{ secrets.SLACK_NOTIFICATIONS_BOT_TOKEN }}
+        SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
+        SLACK_ICON: https://github.com/rtCamp.png?size=48
+        SLACK_TITLE: Post Title
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEB }}
