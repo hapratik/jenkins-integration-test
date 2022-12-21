@@ -1,9 +1,8 @@
-
-
-- name: Send custom JSON data to Slack workflow
-  id: slack
-  uses: slackapi/slack-github-action@v1.23.0
-  with:
+ on: push
+ name: Send custom JSON data to Slack workflow
+ id: slack
+ uses: slackapi/slack-github-action@v1.23.0
+ with:
     # For posting a rich message using Block Kit
     channel-id: "CHANNEL_ID"
     update-ts: ${{ steps.slack.outputs.ts }}
@@ -24,6 +23,6 @@
           }
         ]
       }
-  env:
-    SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-    SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+ env:
+   SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+   SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
