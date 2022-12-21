@@ -1,0 +1,29 @@
+
+
+- name: Send custom JSON data to Slack workflow
+  id: slack
+  uses: slackapi/slack-github-action@v1.23.0
+  with:
+    # For posting a rich message using Block Kit
+    channel-id: "CHANNEL_ID"
+    update-ts: ${{ steps.slack.outputs.ts }}
+    payload: |
+      {
+        "text": "Deployment finished (Completed)",
+        "attachments": [
+          {
+            "pretext": "Deployment finished",
+            "color": "28a745",
+            "fields": [
+              {
+                "title": "Status",
+                "short": true,
+                "value": "Completed"
+              }
+            ]
+          }
+        ]
+      }
+  env:
+    SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+    SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
